@@ -6,6 +6,7 @@ import Understanding from '../Understanding/Understanding'
 import BeginFeedback from '../BeginFeedback/BeginFeedback'
 import Support from '../Support/Support'
 import Comments from '../Comments/Comments'
+import Review from '../Review/Review'
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -67,6 +68,11 @@ function App() {
       <Route path="/Comments" exact>
       <Comments />
       </Route>
+
+      <Route path="/Review" exact>
+      <Review />
+      </Route>
+
 
       </Router>
     </div>
