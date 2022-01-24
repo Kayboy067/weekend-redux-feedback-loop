@@ -4,6 +4,7 @@ import './App.css';
 import Feeling from '../Feeling/Feeling'
 import Understanding from '../Understanding/Understanding'
 import BeginFeedback from '../BeginFeedback/BeginFeedback'
+import Support from '../Support/Support'
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -56,6 +57,10 @@ function App() {
 
       <Route path="/Understanding" exact>
       <Understanding />
+      </Route>
+
+      <Route path="/Support" exact>
+      <Support />
       </Route>
 
       </Router>
