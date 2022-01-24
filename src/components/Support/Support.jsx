@@ -19,7 +19,7 @@ const Support = () => {
             type: 'SUBMIT_SUPPORT',
             payload: support
         })
-      //history.push("/support")
+      history.push("/comments")
 
     }
   
