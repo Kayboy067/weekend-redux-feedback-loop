@@ -21,7 +21,7 @@ const Feeling = () => {
             type: 'SUBMIT_FEELING',
             payload: feeling
         })
-      //history.push("/understanding")
+      history.push("/understanding")
 
     }
   

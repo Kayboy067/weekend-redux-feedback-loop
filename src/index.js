@@ -13,7 +13,7 @@ const feedback = (
         feeling: "",
         understanding: "",
         support: "",
-        // comments: "",
+        comments: "",
     },
         action) => {
     switch (action.type) {
@@ -27,8 +27,8 @@ const feedback = (
         case "SUBMIT_SUPPORT":
             return {...state, support:(state.support= action.payload)}  
 
-        // case "ADD_COMMENTS":
-        //     return {...state, comments:(state.comments= action.payload)}    
+        case "SUBMIT_COMMENTS":
+            return {...state, comments:(state.comments= action.payload)}    
 
 
     }
