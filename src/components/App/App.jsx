@@ -2,8 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import Feeling from '../Feeling/Feeling'
+import Understanding from '../Understanding/Understanding'
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
 
@@ -41,9 +42,18 @@ function App() {
       </header>
 
       <Router>
-      <Route path="/" exact>
+        <nav>
+        <Link to="/Feeling">Feeling</Link>
+        <Link to="/Understanding">Understanding</Link>
+        </nav>
+      <Route path="/Feeling" exact>
       <Feeling />
       </Route>
+
+      <Route path="/Understanding" exact>
+      <Understanding />
+      </Route>
+
       </Router>
     </div>
   );
