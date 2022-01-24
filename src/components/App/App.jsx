@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import Feeling from '../Feeling/Feeling'
 import Understanding from '../Understanding/Understanding'
+import BeginFeedback from '../BeginFeedback/BeginFeedback'
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -46,6 +47,9 @@ function App() {
         <Link to="/Feeling">Feeling</Link>
         <Link to="/Understanding">Understanding</Link>
         </nav>
+      <Route path="/" exact>
+        <BeginFeedback />
+      </Route>
       <Route path="/Feeling" exact>
       <Feeling />
       </Route>

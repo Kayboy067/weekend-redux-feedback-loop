@@ -5,7 +5,7 @@ import NativeSelect from '@mui/material/NativeSelect';
 import Button from '@mui/material/Button';
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 
 const Feeling = () => {
@@ -49,8 +49,8 @@ const Feeling = () => {
         </NativeSelect>
       </FormControl> <br />
             
-        <Button type="submit" value= "NEXT" variant="outlined">
-        NEXT</Button>
+        <Link to="/Understanding"><Button type="submit" value= "NEXT" variant="outlined">
+        NEXT</Button></Link>
       </form>
   </div>
   );
