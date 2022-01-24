@@ -7,35 +7,35 @@ import {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-const Understanding = () => {
+const Support = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const [understanding, setUnderstanding] = useState('');
+    const [support, setSupport] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
         dispatch({
-            type: 'SUBMIT_UNDERSTANDING',
-            payload: understanding
+            type: 'SUBMIT_SUPPORT',
+            payload: support
         })
-      history.push("/support")
+      //history.push("/support")
 
     }
   
   return (
   <div>
-      <h1>How well are you understanding the content?</h1>
+      <h1>How well are you being supported?</h1>
       <form onClick={handleSubmit} className='form'>
       <FormControl sx={{ m: 2, minWidth: 320 }}>
-        <InputLabel variant="standard" understanding={understanding} onChange={(event) =>setUnderstanding(event.target.value)}>
-          Understanding?
+        <InputLabel variant="standard" support={support} onChange={(event) =>setSupport(event.target.value)}>
+          Support?
         </InputLabel>
         <NativeSelect
           defaultValue={0}
           inputProps={{
-            name: 'understanding',
-            id: 'understanding-feedback',
+            name: 'support',
+            id: 'support-feedback',
           }}
         >
           <option value={0}>0</option>
@@ -54,4 +54,4 @@ const Understanding = () => {
   );
 };
 
-export default Understanding;
+export default Support;
