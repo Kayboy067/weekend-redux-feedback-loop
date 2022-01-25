@@ -15,8 +15,7 @@ const Feeling = () => {
 
     const [feeling, setFeeling] = useState('');
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = () => {
         dispatch({
             type: 'SUBMIT_FEELING',
             payload: feeling
@@ -28,30 +27,28 @@ const Feeling = () => {
   return (
   <div>
       <h1>How are you feeling today?</h1>
-      <form onClick={handleSubmit} className='form'>
-      <FormControl sx={{ m: 2, minWidth: 320 }}>
-        <InputLabel variant="standard" feeling={feeling} onChange={(event) =>setFeeling(event.target.value)}>
-          Feeling?
-        </InputLabel>
-        <NativeSelect
-          defaultValue={0}
-          inputProps={{
-            name: 'feeling',
-            id: 'feeling-feedback',
-          }}
-        >
-          <option value={0}>0</option>
-          <option value={1}>1</option>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
-        </NativeSelect>
-      </FormControl> <br />
+     
+        <FormControl sx={{ m: 2, minWidth: 320 }}>
+          <InputLabel variant="standard" feeling={feeling}>
+            Feeling?
+          </InputLabel>
+          <NativeSelect
+            onChange={(event) =>setFeeling(event.target.value)}
+            defaultValue={0}
+            inputProps={{
+              name: 'feeling',
+              id: 'feeling-feedback',
+            }}>
+            <option value={0}>0</option>
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
+            <option value={5}>5</option>
+          </NativeSelect>
+        </FormControl> <br />
             
-        <Link to="/Understanding"><Button type="submit" value= "NEXT" variant="outlined">
-        NEXT</Button></Link>
-      </form>
+        <Button variant="contained" onClick={handleSubmit}>NEXT</Button>
   </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios";
+import Button from '@mui/material/Button';
 import { useHistory} from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -8,7 +9,7 @@ const Review = () => {
     const feedback = useSelector((store) => store.feedback)
 
 
-    const onHandleSubmit = () => {
+    const handleSubmit = () => {
      axios.post("/api/feedback", feedback)
      .then((res) => {
          console.log("POST /feedback", res);
@@ -27,7 +28,7 @@ const Review = () => {
             <p>Comments: {feedback.comments}</p>
 
 
-            <button  onClick={onHandleSubmit}>SUBMIT</button>
+            <Button variant="contained" onClick={handleSubmit}>SUBMIT</Button>
             <br></br>
         </div>
     )

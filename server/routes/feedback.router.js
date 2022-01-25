@@ -19,12 +19,11 @@ router.get('/', (req, res) => {
 // Adds a new feedback to the list of prime feedback
 // Request body must be a feedback object with the feedbacks
 router.post('/',  (req, res) => {
-  let newFeedback = req.body;
-  console.log(`Adding feedback`, newFeedback);
-
+  console.log('feedback send to db', req.body);
   let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
-                   VALUES ($1, $2);`;
-  pool.query(queryText, [newFeedback.feeling, newFeedback.understanding, newFeedback.support, newFeedback.comments])
+                   VALUES ($1, $2, $3, $4);`;
+  let newFeedback = [req.body.feeling, req.body.understanding, req.body.support, req.body.comments];
+  pool.query(queryText, newFeedback)
     .then(result => {
       res.sendStatus(201);
     })

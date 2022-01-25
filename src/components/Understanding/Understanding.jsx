@@ -13,8 +13,7 @@ const Understanding = () => {
 
     const [understanding, setUnderstanding] = useState('');
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = () => {
         dispatch({
             type: 'SUBMIT_UNDERSTANDING',
             payload: understanding
@@ -23,34 +22,32 @@ const Understanding = () => {
 
     }
   
-  return (
-  <div>
-      <h1>How well are you understanding the content?</h1>
-      <form onClick={handleSubmit} className='form'>
-      <FormControl sx={{ m: 2, minWidth: 320 }}>
-        <InputLabel variant="standard" understanding={understanding} onChange={(event) =>setUnderstanding(event.target.value)}>
-          Understanding?
-        </InputLabel>
-        <NativeSelect
-          defaultValue={0}
-          inputProps={{
-            name: 'understanding',
-            id: 'understanding-feedback',
-          }}
-        >
-          <option value={0}>0</option>
-          <option value={1}>1</option>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
-        </NativeSelect>
-      </FormControl> <br />
-            
-        <Button type="submit" value= "NEXT" variant="outlined">
-        NEXT</Button>
-      </form>
-  </div>
+    return (
+      <div>
+          <h1>How well are you understanding the content?</h1>
+          
+          <FormControl sx={{ m: 2, minWidth: 320 }}>
+            <InputLabel variant="standard" understanding={understanding}>
+              Understanding?
+            </InputLabel>
+            <NativeSelect
+              onChange={(event) =>setUnderstanding(event.target.value)}
+              defaultValue={0}
+              inputProps={{
+                name: 'understanding',
+                id: 'understanding-feedback',
+              }}>
+              <option value={0}>0</option>
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+            </NativeSelect>
+          </FormControl> <br />
+                
+          <Button variant="contained" onClick={handleSubmit}>NEXT</Button>
+      </div>
   );
 };
 

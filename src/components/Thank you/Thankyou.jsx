@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@mui/material/Button';
 import { useDispatch, useSelector} from "react-redux";
 import {useHistory} from "react-router-dom";
 
@@ -16,9 +17,9 @@ const Thankyou = () => {
 
     return (
         <div>
-            <header>Feedback</header>
+            <header><strong>Feedback</strong></header>
             <h2>Thank You!</h2>
-            <button onClick={reset}>Leave New Feedback</button>
+            <Button variant="contained" onClick={reset}>Leave New Feedback</Button>
         </div>
     );
 };
